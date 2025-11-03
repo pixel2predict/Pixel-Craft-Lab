@@ -1,0 +1,2533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Craft Lab | Professional Creative Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary: #4361ee;
+            --secondary: #3a0ca3;
+            --accent: #f72585;
+            --dark: #1e1e2c;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --gradient-primary: linear-gradient(135deg, #4361ee, #3a0ca3);
+            --gradient-secondary: linear-gradient(135deg, #7209b7, #3a0ca3);
+            --gradient-accent: linear-gradient(135deg, #f72585, #b5179e);
+            --gradient-dark: linear-gradient(135deg, #1e1e2c, #2d2d44);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        h1, h2, h3, h4 {
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-accent);
+            border-radius: 2px;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+        }
+        
+        .btn:hover {
+            background: var(--gradient-secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(67, 97, 238, 0.4);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            box-shadow: none;
+        }
+        
+        .btn-outline:hover {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            margin: 0;
+            color: var(--dark);
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 150px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+        
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .service-icon {
+            height: 200px;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-icon:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1), transparent);
+        }
+        
+        .service-content {
+            padding: 25px;
+        }
+        
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 15px 0;
+        }
+        
+        .features {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        
+        .features li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .features li i {
+            color: var(--primary);
+            margin-right: 10px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            background: #f8f9fa;
+        }
+        
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+        
+        .filter-btn {
+            padding: 10px 20px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--gradient-primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 4px 10px rgba(67, 97, 238, 0.2);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            height: 250px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 0.9;
+        }
+        
+        /* Detail Page Styles */
+        .detail-page {
+            display: none;
+            padding-top: 100px;
+        }
+        
+        .detail-page.active {
+            display: block;
+        }
+        
+        .detail-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 100px 0 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .detail-header:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        
+        .detail-content {
+            padding: 80px 0;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 30px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .back-btn:hover {
+            color: var(--secondary);
+        }
+        
+        .back-btn i {
+            margin-right: 8px;
+        }
+        
+        .project-details {
+            display: flex;
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+        
+        .project-info {
+            flex: 1;
+        }
+        
+        .project-gallery {
+            flex: 1;
+        }
+        
+        .project-images {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .project-image {
+            height: 200px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .project-image:hover {
+            transform: translateY(-5px);
+        }
+        
+        .project-image div {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .project-description {
+            margin-bottom: 30px;
+        }
+        
+        .project-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .project-features li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .project-features li i {
+            color: var(--primary);
+            margin-right: 10px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* About Section */
+        .about {
+            background: white;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Testimonials Section */
+    .testimonials {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        padding: 80px 0;
+        position: relative;
+    }
+
+    .testimonials h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 2.5rem;
+        color: #1e1e2c;
+        position: relative;
+    }
+
+    .testimonials h2:after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(135deg, #4361ee, #3a0ca3);
+        border-radius: 2px;
+    }
+
+    /* Testimonial Slider */
+    .testimonial-slider {
+        max-width: 1000px;
+        margin: 0 auto 60px;
+        position: relative;
+    }
+
+    .testimonial-track {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .testimonial-slide {
+        min-width: 100%;
+        padding: 20px;
+        display: none;
+    }
+
+    .testimonial-slide.active {
+        display: block;
+        animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Testimonial Card */
+    .testimonial-card {
+        background: white;
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        border: 1px solid rgba(0,0,0,0.05);
+        position: relative;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    }
+
+    .quote-icon {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 3rem;
+        color: #4361ee;
+        opacity: 0.2;
+    }
+
+    .testimonial-content {
+        margin-bottom: 30px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .testimonial-content p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #4a5568;
+        font-style: italic;
+        margin-bottom: 20px;
+    }
+
+    .rating {
+        color: #fbbf24;
+        font-size: 1.2rem;
+        margin-top: 15px;
+    }
+
+    /* Client Info */
+    .client-info {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        border-top: 1px solid #e2e8f0;
+        padding-top: 25px;
+    }
+
+    .client-avatar {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 3px solid #4361ee;
+        box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+    }
+
+    .client-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .client-details h4 {
+        margin: 0 0 5px 0;
+        font-size: 1.2rem;
+        color: #1e1e2c;
+    }
+
+    .client-details p {
+        margin: 0;
+        color: #718096;
+        font-size: 0.9rem;
+    }
+
+    /* Slider Navigation */
+    .slider-nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .slider-prev, .slider-next {
+        background: linear-gradient(135deg, #4361ee, #3a0ca3);
+        color: white;
+        border: none;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+    }
+
+    .slider-prev:hover, .slider-next:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(67, 97, 238, 0.4);
+    }
+
+    .slider-dots {
+        display: flex;
+        gap: 10px;
+    }
+
+    .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #cbd5e0;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .dot.active {
+        background: linear-gradient(135deg, #4361ee, #3a0ca3);
+        transform: scale(1.2);
+    }
+
+    .dot:hover {
+        background: #4361ee;
+    }
+
+    /* Trust Badges */
+    .trust-badges {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .trust-item {
+        text-align: center;
+        padding: 30px 20px;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .trust-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    }
+
+    .trust-icon {
+        width: 70px;
+        height: 70px;
+        margin: 0 auto 15px;
+        background: linear-gradient(135deg, #4361ee, #3a0ca3);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.8rem;
+    }
+
+    .trust-text h3 {
+        margin: 0 0 5px 0;
+        font-size: 2rem;
+        color: #1e1e2c;
+    }
+
+    .trust-text p {
+        margin: 0;
+        color: #718096;
+        font-weight: 500;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .testimonial-card {
+            padding: 30px 20px;
+        }
+
+        .testimonial-content p {
+            font-size: 1rem;
+        }
+
+        .client-info {
+            flex-direction: column;
+            text-align: center;
+            gap: 15px;
+        }
+
+        .slider-nav {
+            gap: 20px;
+        }
+
+        .trust-badges {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .trust-item {
+            padding: 20px 15px;
+        }
+
+        .trust-text h3 {
+            font-size: 1.5rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .testimonials h2 {
+            font-size: 2rem;
+        }
+
+        .trust-badges {
+            grid-template-columns: 1fr;
+        }
+
+        .slider-prev, .slider-next {
+            width: 45px;
+            height: 45px;
+        }
+    }
+        
+        /* Contact Section */
+        .contact {
+            background: var(--gradient-secondary);
+            color: white;
+        }
+        
+        .contact h2:after {
+            background: white;
+        }
+        
+        .contact-container {
+            display: flex;
+            gap: 50px;
+        }
+        
+        .contact-info, .contact-form {
+            flex: 1;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 20px;
+        }
+        
+        .contact-details {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .contact-details li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-details li i {
+            margin-right: 15px;
+            font-size: 1.2rem;
+            width: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            transition: background 0.3s, transform 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-3px);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.9);
+            font-size: 1rem;
+            transition: box-shadow 0.3s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255,255,255,0.3);
+        }
+        
+        select.form-control {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232a2a3c' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 16px;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--gradient-dark);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            padding: 0 15px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--gradient-accent);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+            
+            .footer-column {
+                margin-bottom: 30px;
+            }
+            
+            .project-details {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 0;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 50px;
+                transition: left 0.3s;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .project-images {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <h1>Pixel<span>Craft</span>Lab</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <div class="container"><br>
+            <h1>Creative Studio for Digital Excellence</h1><br><br>
+            <p>We transform your ideas into stunning visual content that captivates your audience and elevates your brand.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <!-- Video Editing -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Video Editing</h3>
+                        <p>Professional video editing services for YouTube, social media, commercials, and more.</p>
+                        <div class="price">₹3,500 - ₹25,000</div>
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> Color Correction & Grading</li>
+                            <li><i class="fas fa-check"></i> Motion Graphics</li>
+                            <li><i class="fas fa-check"></i> Audio Enhancement</li>
+                            <li><i class="fas fa-check"></i> Multiple Revisions</li>
+                        </ul>
+                        <a href="#contact" class="btn">Get Quote</a>
+                    </div>
+                </div>
+                
+                <!-- Graphic Design -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Graphic Design</h3>
+                        <p>Creative graphic design solutions for logos, branding, marketing materials, and more.</p>
+                        <div class="price">₹2,000 - ₹15,000</div>
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> Logo Design</li>
+                            <li><i class="fas fa-check"></i> Brand Identity</li>
+                            <li><i class="fas fa-check"></i> Social Media Graphics</li>
+                            <li><i class="fas fa-check"></i> Print Design</li>
+                        </ul>
+                        <a href="#contact" class="btn">Get Quote</a>
+                    </div>
+                </div>
+                
+                <!-- Poster Making -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-images"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Poster Making</h3>
+                        <p>Eye-catching poster designs for events, movies, promotions, and advertising campaigns.</p>
+                        <div class="price">₹1,500 - ₹12,000</div>
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> Event Posters</li>
+                            <li><i class="fas fa-check"></i> Movie Posters</li>
+                            <li><i class="fas fa-check"></i> Promotional Posters</li>
+                            <li><i class="fas fa-check"></i> Print-Ready Files</li>
+                        </ul>
+                        <a href="#contact" class="btn">Get Quote</a>
+                    </div>
+                </div>
+                
+                <!-- Thumbnail Making -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Thumbnail Making</h3>
+                        <p>High-converting thumbnails designed to increase click-through rates for your videos.</p>
+                        <div class="price">₹1,000 - ₹6,000</div>
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> YouTube Thumbnails</li>
+                            <li><i class="fas fa-check"></i> Custom Illustrations</li>
+                            <li><i class="fas fa-check"></i> Attention-Grabbing Design</li>
+                            <li><i class="fas fa-check"></i> Multiple Variations</li>
+                        </ul>
+                        <a href="#contact" class="btn">Get Quote</a>
+                    </div>
+                </div>
+                
+                <!-- Reels Making -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Reels Making</h3>
+                        <p>Engaging short-form video content optimized for Instagram, TikTok, and other platforms.</p>
+                        <div class="price">₹2,500 - ₹15,000</div>
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> Trend Optimization</li>
+                            <li><i class="fas fa-check"></i> Captions & Text Overlays</li>
+                            <li><i class="fas fa-check"></i> Music & Sound Design</li>
+                            <li><i class="fas fa-check"></i> Platform-Specific Formatting</li>
+                        </ul>
+                        <a href="#contact" class="btn">Get Quote</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2>Our Gallery</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 40px;">Browse through our collection of creative work across different categories</p>
+            
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">All Work</button>
+                <button class="filter-btn" data-filter="video">Video Editing</button>
+                <button class="filter-btn" data-filter="graphic">Graphic Design</button>
+                <button class="filter-btn" data-filter="poster">Poster Making</button>
+                <button class="filter-btn" data-filter="thumbnail">Thumbnail Making</button>
+                <button class="filter-btn" data-filter="reels">Reels Making</button>
+            </div>
+            
+            <div class="gallery-grid">
+                <!-- Video Editing Examples -->
+                <div class="gallery-item" data-category="video" data-project="youtube-series">
+                    <div style="width:100%; height:100%; background:linear-gradient(45deg, #4361ee, #3a0ca3);"></div>
+                    <div class="gallery-overlay">
+                        <h3>YouTube Vlog Series</h3>
+                        <p>Color grading and seamless transitions</p>
+                        <p><small>Click to view details</small></p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="video" data-project="corporate-training">
+                    <div style="width:100%; height:100%; background:linear-gradient(45deg, #7209b7, #3a0ca3);"></div>
+                    <div class="gallery-overlay">
+                        <h3>Corporate Training Video</h3>
+                        <p>Professional editing with motion graphics</p>
+                        <p><small>Click to view details</small></p>
+                    </div>
+                </div>
+                
+                <!-- Graphic Design Examples -->
+                <div class="gallery-item" data-category="graphic" data-project="brand-identity">
+                    <div style="width:100%; height:100%; background:linear-gradient(45deg, #f72585, #b5179e);"></div>
+                    <div class="gallery-overlay">
+                        <h3>Brand Identity Package</h3>
+                        <p>Logo, business cards, and brand guidelines</p>
+                        <p><small>Click to view details</small></p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="graphic" data-project="social-media-kit">
+                    <div style="width:100%; height:100%; background:linear-gradient(45deg, #4cc9f0, #4361ee);"></div>
+                    <div class="gallery-overlay">
+                        <h3>Social Media Kit</h3>
+                        <p>Cohesive graphics for all platforms</p>
+                        <p><small>Click to view details</small></p>
+                    </div>
+                </div>
+                
+                <!-- Poster Making Examples -->
+                <div class="gallery-item" data-category="poster" data-project="music-festival">
+                    <div style="width:100%; height:100%; background:linear-gradient(45deg, #f72585, #7209b7);"></div>
+                    <div class="gallery-overlay">
+                        <h3>Music Festival Poster</h3>
+                        <p>Vibrant design with custom typography</p>
+                        <p><small>Click to view details</small></p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="poster" data-project="movie-poster">
+                    <div style="width:100%; height:100%; background:linear-gradient(45deg, #4361ee, #4cc9f0);"></div>
+                    <div class="gallery-overlay">
+                        <h3>Movie Poster Design</h3>
+                        <p>Cinematic composition and mood</p>
+                        <p><small>Click to view details</small></p>
+                    </div>
+                </div>
+                
+                <!-- Thumbnail Making Examples -->
+                <div class="gallery-item" data-category="thumbnail" data-project="gaming-thumbnails">
+                    <div style="width:100%; height:100%; background:linear-gradient(45deg, #7209b7, #f72585);"></div>
+                    <div class="gallery-overlay">
+                        <h3>Gaming Channel Thumbnails</h3>
+                        <p>High-contrast, attention-grabbing design</p>
+                        <p><small>Click to view details</small></p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="thumbnail" data-project="beauty-thumbnails">
+                    <div style="width:100%; height:100%; background:linear-gradient(45deg, #f72585, #4cc9f0);"></div>
+                    <div class="gallery-overlay">
+                        <h3>Beauty Tutorial Thumbnails</h3>
+                        <p>Clean, professional and click-worthy</p>
+                        <p><small>Click to view details</small></p>
+                    </div>
+                </div>
+                
+                <!-- Reels Making Examples -->
+                <div class="gallery-item" data-category="reels" data-project="fitness-reels">
+                    <div style="width:100%; height:100%; background:linear-gradient(45deg, #4361ee, #7209b7);"></div>
+                    <div class="gallery-overlay">
+                        <h3>Fitness Reels</h3>
+                        <p>Dynamic transitions and text animations</p>
+                        <p><small>Click to view details</small></p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="reels" data-project="product-reels">
+                    <div style="width:100%; height:100%; background:linear-gradient(45deg, #4cc9f0, #4361ee);"></div>
+                    <div class="gallery-overlay">
+                        <h3>Product Showcase Reels</h3>
+                        <p>Engaging format with trending audio</p>
+                        <p><small>Click to view details</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detail Pages -->
+    <div id="youtube-series-detail" class="detail-page">
+        <div class="detail-header">
+            <div class="container">
+                <h1>YouTube Vlog Series</h1>
+                <p>Professional video editing for a travel vlog channel</p>
+            </div>
+        </div>
+        
+        <div class="detail-content">
+            <div class="container">
+                <a href="#gallery" class="back-btn">
+                    <i class="fas fa-arrow-left"></i> Back to Gallery
+                </a>
+                
+                <div class="project-details">
+                    <div class="project-info">
+                        <h2>Project Overview</h2>
+                        <div class="project-description">
+                            <p>We collaborated with a popular travel vlogger to create a cohesive and engaging video series documenting their journey across Southeast Asia. The project involved editing 12 episodes, each with a unique visual style while maintaining brand consistency.</p>
+                            <p>Our approach focused on enhancing the storytelling through strategic pacing, color grading that captured the vibrancy of each location, and seamless transitions that maintained viewer engagement throughout the series.</p>
+                        </div>
+                        
+                        <h3>Key Features</h3>
+                        <ul class="project-features">
+                            <li><i class="fas fa-check"></i> Color grading tailored to each location</li>
+                            <li><i class="fas fa-check"></i> Custom motion graphics and titles</li>
+                            <li><i class="fas fa-check"></i> Audio enhancement and background music</li>
+                            <li><i class="fas fa-check"></i> Seamless transitions between scenes</li>
+                            <li><i class="fas fa-check"></i> Optimized for YouTube platform</li>
+                            <li><i class="fas fa-check"></i> Consistent branding throughout series</li>
+                        </ul>
+                        
+                        <h3>Results</h3>
+                        <p>The series achieved a 40% increase in average view duration and a 25% growth in subscriber count during the first month of release. The client reported higher engagement rates and positive feedback on the production quality.</p>
+                        
+                        <a href="#contact" class="btn start-project-btn">Start Your Project</a>
+                    </div>
+                    
+                    <div class="project-gallery">
+                        <h3>Project Gallery</h3>
+                        <div class="project-images">
+                            <div class="project-image">
+                                <div style="width:100%; height:100%; background:linear-gradient(45deg, #4361ee, #3a0ca3);"></div>
+                            </div>
+                            <div class="project-image">
+                                <div style="width:100%; height:100%; background:linear-gradient(45deg, #7209b7, #3a0ca3);"></div>
+                            </div>
+                            <div class="project-image">
+                                <div style="width:100%; height:100%; background:linear-gradient(45deg, #f72585, #b5179e);"></div>
+                            </div>
+                            <div class="project-image">
+                                <div style="width:100%; height:100%; background:linear-gradient(45deg, #4cc9f0, #4361ee);"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Corporate Training Detail Page -->
+    <div id="corporate-training-detail" class="detail-page">
+        <div class="detail-header">
+            <div class="container">
+                <h1>Corporate Training Video</h1>
+                <p>Professional editing with motion graphics for corporate training</p>
+            </div>
+        </div>
+        
+        <div class="detail-content">
+            <div class="container">
+                <a href="#gallery" class="back-btn">
+                    <i class="fas fa-arrow-left"></i> Back to Gallery
+                </a>
+                
+                <div class="project-details">
+                    <div class="project-info">
+                        <h2>Project Overview</h2>
+                        <div class="project-description">
+                            <p>We worked with a multinational corporation to create a comprehensive training video series for their global workforce. The project required professional editing, motion graphics, and clear information presentation.</p>
+                            <p>Our team ensured the content was engaging while maintaining the professional tone required for corporate training materials. We incorporated custom animations to explain complex concepts and created a cohesive visual identity across all modules.</p>
+                        </div>
+                        
+                        <h3>Key Features</h3>
+                        <ul class="project-features">
+                            <li><i class="fas fa-check"></i> Professional motion graphics</li>
+                            <li><i class="fas fa-check"></i> Clear information hierarchy</li>
+                            <li><i class="fas fa-check"></i> Corporate branding integration</li>
+                            <li><i class="fas fa-check"></i> Multi-language subtitle support</li>
+                            <li><i class="fas fa-check"></i> Interactive elements</li>
+                            <li><i class="fas fa-check"></i> Consistent pacing for learning</li>
+                        </ul>
+                        
+                        <h3>Results</h3>
+                        <p>The training series received positive feedback from employees across all regions, with a 95% completion rate. The client reported improved knowledge retention and requested additional modules based on the success of the initial project.</p>
+                        
+                        <a href="#contact" class="btn start-project-btn">Start Your Project</a>
+                    </div>
+                    
+                    <div class="project-gallery">
+                        <h3>Project Gallery</h3>
+                        <div class="project-images">
+                            <div class="project-image">
+                                <div style="width:100%; height:100%; background:linear-gradient(45deg, #7209b7, #3a0ca3);"></div>
+                            </div>
+                            <div class="project-image">
+                                <div style="width:100%; height:100%; background:linear-gradient(45deg, #4361ee, #3a0ca3);"></div>
+                            </div>
+                            <div class="project-image">
+                                <div style="width:100%; height:100%; background:linear-gradient(45deg, #f72585, #b5179e);"></div>
+                            </div>
+                            <div class="project-image">
+                                <div style="width:100%; height:100%; background:linear-gradient(45deg, #4cc9f0, #4361ee);"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Brand Identity Package Detail Page-->
+     <div id="brand-identity-detail" class="detail-page">
+        <div class="detail-header">
+            <div class="container">
+                <h1>Brand Identity Package</h1>
+                <p>Professional video editing for a travel vlog channel</p>
+            </div>
+        </div>
+        
+        <div class="detail-content">
+            <div class="container">
+                <a href="#gallery" class="back-btn">
+                    <i class="fas fa-arrow-left"></i> Back to Gallery
+                </a>
+                
+                <div class="project-details">
+                    <div class="project-info">
+                        <h2>Project Overview</h2>
+                        <div class="project-description">
+                            <p>We collaborated with a popular travel vlogger to create a cohesive and engaging video series documenting their journey across Southeast Asia. The project involved editing 12 episodes, each with a unique visual style while maintaining brand consistency.</p>
+                            <p>Our approach focused on enhancing the storytelling through strategic pacing, color grading that captured the vibrancy of each location, and seamless transitions that maintained viewer engagement throughout the series.</p>
+                        </div>
+                        
+                        <h3>Key Features</h3>
+                        <ul class="project-features">
+                            <li><i class="fas fa-check"></i> Color grading tailored to each location</li>
+                            <li><i class="fas fa-check"></i> Custom motion graphics and titles</li>
+                            <li><i class="fas fa-check"></i> Audio enhancement and background music</li>
+                            <li><i class="fas fa-check"></i> Seamless transitions between scenes</li>
+                            <li><i class="fas fa-check"></i> Optimized for YouTube platform</li>
+                            <li><i class="fas fa-check"></i> Consistent branding throughout series</li>
+                        </ul>
+                        
+                        <h3>Results</h3>
+                        <p>The series achieved a 40% increase in average view duration and a 25% growth in subscriber count during the first month of release. The client reported higher engagement rates and positive feedback on the production quality.</p>
+                        
+                        <a href="#contact" class="btn start-project-btn">Start Your Project</a>
+                    </div>
+                    
+                    <div class="project-gallery">
+                        <h3>Project Gallery</h3>
+                        <div class="project-images">
+                            <div class="project-image">
+                                <div style="width:100%; height:100%; background:linear-gradient(45deg, #4361ee, #3a0ca3);"></div>
+                            </div>
+                            <div class="project-image">
+                                <div style="width:100%; height:100%; background:linear-gradient(45deg, #7209b7, #3a0ca3);"></div>
+                            </div>
+                            <div class="project-image">
+                                <div style="width:100%; height:100%; background:linear-gradient(45deg, #f72585, #b5179e);"></div>
+                            </div>
+                            <div class="project-image">
+                                <div style="width:100%; height:100%; background:linear-gradient(45deg, #4cc9f0, #4361ee);"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---->
+    <div id="social-media-kit-detail" class="detail-page">
+        <div class="detail-header">
+            <div class="container">
+                <h1>Social Media Kit</h1>
+                <p>Professional video editing for a travel vlog channel</p>
+            </div>
+        </div>
+        
+        <div class="detail-content">
+            <div class="container">
+                <a href="#gallery" class="back-btn">
+                    <i class="fas fa-arrow-left"></i> Back to Gallery
+                </a>
+                
+                <div class="project-details">
+                    <div class="project-info">
+                        <h2>Project Overview</h2>
+                        <div class="project-description">
+                            <p>We collaborated with a popular travel vlogger to create a cohesive and engaging video series documenting their journey across Southeast Asia. The project involved editing 12 episodes, each with a unique visual style while maintaining brand consistency.</p>
+                            <p>Our approach focused on enhancing the storytelling through strategic pacing, color grading that captured the vibrancy of each location, and seamless transitions that maintained viewer engagement throughout the series.</p>
+                        </div>
+                        
+                        <h3>Key Features</h3>
+                        <ul class="project-features">
+                            <li><i class="fas fa-check"></i> Color grading tailored to each location</li>
+                            <li><i class="fas fa-check"></i> Custom motion graphics and titles</li>
+                            <li><i class="fas fa-check"></i> Audio enhancement and background music</li>
+                            <li><i class="fas fa-check"></i> Seamless transitions between scenes</li>
+                            <li><i class="fas fa-check"></i> Optimized for YouTube platform</li>
+                            <li><i class="fas fa-check"></i> Consistent branding throughout series</li>
+                        </ul>
+                        
+                        <h3>Results</h3>
+                        <p>The series achieved a 40% increase in average view duration and a 25% growth in subscriber count during the first month of release. The client reported higher engagement rates and positive feedback on the production quality.</p>
+                        
+                        <a href="#contact" class="btn start-project-btn">Start Your Project</a>
+                    </div>
+                    
+                    <div class="project-gallery">
+                        <h3>Project Gallery</h3>
+                        <div class="project-images">
+                            <div class="project-image">
+                                <div style="width:100%; height:100%; background:linear-gradient(45deg, #4361ee, #3a0ca3);"></div>
+                            </div>
+                            <div class="project-image">
+                                <div style="width:100%; height:100%; background:linear-gradient(45deg, #7209b7, #3a0ca3);"></div>
+                            </div>
+                            <div class="project-image">
+                                <div style="width:100%; height:100%; background:linear-gradient(45deg, #f72585, #b5179e);"></div>
+                            </div>
+                            <div class="project-image">
+                                <div style="width:100%; height:100%; background:linear-gradient(45deg, #4cc9f0, #4361ee);"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---->
+    <div id="music-festival-detail" class="detail-page">
+        <div class="detail-header">
+            <div class="container">
+                <h1>Music Festival Poster</h1>
+                <p>Professional video editing for a travel vlog channel</p>
+            </div>
+        </div>
+        
+        <div class="detail-content">
+            <div class="container">
+                <a href="#gallery" class="back-btn">
+                    <i class="fas fa-arrow-left"></i> Back to Gallery
+                </a>
+                
+                <div class="project-details">
+                    <div class="project-info">
+                        <h2>Project Overview</h2>
+                        <div class="project-description">
+                            <p>We collaborated with a popular travel vlogger to create a cohesive and engaging video series documenting their journey across Southeast Asia. The project involved editing 12 episodes, each with a unique visual style while maintaining brand consistency.</p>
+                            <p>Our approach focused on enhancing the storytelling through strategic pacing, color grading that captured the vibrancy of each location, and seamless transitions that maintained viewer engagement throughout the series.</p>
+                        </div>
+                        
+                        <h3>Key Features</h3>
+                        <ul class="project-features">
+                            <li><i class="fas fa-check"></i> Color grading tailored to each location</li>
+                            <li><i class="fas fa-check"></i> Custom motion graphics and titles</li>
+                            <li><i class="fas fa-check"></i> Audio enhancement and background music</li>
+                            <li><i class="fas fa-check"></i> Seamless transitions between scenes</li>
+                            <li><i class="fas fa-check"></i> Optimized for YouTube platform</li>
+                            <li><i class="fas fa-check"></i> Consistent branding throughout series</li>
+                        </ul>
+                        
+                        <h3>Results</h3>
+                        <p>The series achieved a 40% increase in average view duration and a 25% growth in subscriber count during the first month of release. The client reported higher engagement rates and positive feedback on the production quality.</p>
+                        
+                        <a href="#contact" class="btn start-project-btn">Start Your Project</a>
+                    </div>
+                    
+                    <div class="project-gallery">
+                        <h3>Project Gallery</h3>
+                        <div class="project-images">
+                            <div class="project-image">
+                                <div style="width:100%; height:100%; background:linear-gradient(45deg, #4361ee, #3a0ca3);"></div>
+                            </div>
+                            <div class="project-image">
+                                <div style="width:100%; height:100%; background:linear-gradient(45deg, #7209b7, #3a0ca3);"></div>
+                            </div>
+                            <div class="project-image">
+                                <div style="width:100%; height:100%; background:linear-gradient(45deg, #f72585, #b5179e);"></div>
+                            </div>
+                            <div class="project-image">
+                                <div style="width:100%; height:100%; background:linear-gradient(45deg, #4cc9f0, #4361ee);"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---->
+    <div id="movie-poster-detail" class="detail-page">
+        <div class="detail-header">
+            <div class="container">
+                <h1>Movie Poster Design</h1>
+                <p>Professional video editing for a travel vlog channel</p>
+            </div>
+        </div>
+        
+        <div class="detail-content">
+            <div class="container">
+                <a href="#gallery" class="back-btn">
+                    <i class="fas fa-arrow-left"></i> Back to Gallery
+                </a>
+                
+                <div class="project-details">
+                    <div class="project-info">
+                        <h2>Project Overview</h2>
+                        <div class="project-description">
+                            <p>We collaborated with a popular travel vlogger to create a cohesive and engaging video series documenting their journey across Southeast Asia. The project involved editing 12 episodes, each with a unique visual style while maintaining brand consistency.</p>
+                            <p>Our approach focused on enhancing the storytelling through strategic pacing, color grading that captured the vibrancy of each location, and seamless transitions that maintained viewer engagement throughout the series.</p>
+                        </div>
+                        
+                        <h3>Key Features</h3>
+                        <ul class="project-features">
+                            <li><i class="fas fa-check"></i> Color grading tailored to each location</li>
+                            <li><i class="fas fa-check"></i> Custom motion graphics and titles</li>
+                            <li><i class="fas fa-check"></i> Audio enhancement and background music</li>
+                            <li><i class="fas fa-check"></i> Seamless transitions between scenes</li>
+                            <li><i class="fas fa-check"></i> Optimized for YouTube platform</li>
+                            <li><i class="fas fa-check"></i> Consistent branding throughout series</li>
+                        </ul>
+                        
+                        <h3>Results</h3>
+                        <p>The series achieved a 40% increase in average view duration and a 25% growth in subscriber count during the first month of release. The client reported higher engagement rates and positive feedback on the production quality.</p>
+                        
+                        <a href="#contact" class="btn start-project-btn">Start Your Project</a>
+                    </div>
+                    
+                    <div class="project-gallery">
+                        <h3>Project Gallery</h3>
+                        <div class="project-images">
+                            <div class="project-image">
+                                <div style="width:100%; height:100%; background:linear-gradient(45deg, #4361ee, #3a0ca3);"></div>
+                            </div>
+                            <div class="project-image">
+                                <div style="width:100%; height:100%; background:linear-gradient(45deg, #7209b7, #3a0ca3);"></div>
+                            </div>
+                            <div class="project-image">
+                                <div style="width:100%; height:100%; background:linear-gradient(45deg, #f72585, #b5179e);"></div>
+                            </div>
+                            <div class="project-image">
+                                <div style="width:100%; height:100%; background:linear-gradient(45deg, #4cc9f0, #4361ee);"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---->
+    <div id="gaming-thumbnails-detail" class="detail-page">
+        <div class="detail-header">
+            <div class="container">
+                <h1>Gaming Channel Thumbnails</h1>
+                <p>Professional video editing for a travel vlog channel</p>
+            </div>
+        </div>
+        
+        <div class="detail-content">
+            <div class="container">
+                <a href="#gallery" class="back-btn">
+                    <i class="fas fa-arrow-left"></i> Back to Gallery
+                </a>
+                
+                <div class="project-details">
+                    <div class="project-info">
+                        <h2>Project Overview</h2>
+                        <div class="project-description">
+                            <p>We collaborated with a popular travel vlogger to create a cohesive and engaging video series documenting their journey across Southeast Asia. The project involved editing 12 episodes, each with a unique visual style while maintaining brand consistency.</p>
+                            <p>Our approach focused on enhancing the storytelling through strategic pacing, color grading that captured the vibrancy of each location, and seamless transitions that maintained viewer engagement throughout the series.</p>
+                        </div>
+                        
+                        <h3>Key Features</h3>
+                        <ul class="project-features">
+                            <li><i class="fas fa-check"></i> Color grading tailored to each location</li>
+                            <li><i class="fas fa-check"></i> Custom motion graphics and titles</li>
+                            <li><i class="fas fa-check"></i> Audio enhancement and background music</li>
+                            <li><i class="fas fa-check"></i> Seamless transitions between scenes</li>
+                            <li><i class="fas fa-check"></i> Optimized for YouTube platform</li>
+                            <li><i class="fas fa-check"></i> Consistent branding throughout series</li>
+                        </ul>
+                        
+                        <h3>Results</h3>
+                        <p>The series achieved a 40% increase in average view duration and a 25% growth in subscriber count during the first month of release. The client reported higher engagement rates and positive feedback on the production quality.</p>
+                        
+                        <a href="#contact" class="btn start-project-btn">Start Your Project</a>
+                    </div>
+                    
+                    <div class="project-gallery">
+                        <h3>Project Gallery</h3>
+                        <div class="project-images">
+                            <div class="project-image">
+                                <div style="width:100%; height:100%; background:linear-gradient(45deg, #4361ee, #3a0ca3);"></div>
+                            </div>
+                            <div class="project-image">
+                                <div style="width:100%; height:100%; background:linear-gradient(45deg, #7209b7, #3a0ca3);"></div>
+                            </div>
+                            <div class="project-image">
+                                <div style="width:100%; height:100%; background:linear-gradient(45deg, #f72585, #b5179e);"></div>
+                            </div>
+                            <div class="project-image">
+                                <div style="width:100%; height:100%; background:linear-gradient(45deg, #4cc9f0, #4361ee);"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---->
+    <div id="beauty-thumbnails-detail" class="detail-page">
+        <div class="detail-header">
+            <div class="container">
+                <h1>Beauty Tutorial Thumbnails</h1>
+                <p>Professional video editing for a travel vlog channel</p>
+            </div>
+        </div>
+        
+        <div class="detail-content">
+            <div class="container">
+                <a href="#gallery" class="back-btn">
+                    <i class="fas fa-arrow-left"></i> Back to Gallery
+                </a>
+                
+                <div class="project-details">
+                    <div class="project-info">
+                        <h2>Project Overview</h2>
+                        <div class="project-description">
+                            <p>We collaborated with a popular travel vlogger to create a cohesive and engaging video series documenting their journey across Southeast Asia. The project involved editing 12 episodes, each with a unique visual style while maintaining brand consistency.</p>
+                            <p>Our approach focused on enhancing the storytelling through strategic pacing, color grading that captured the vibrancy of each location, and seamless transitions that maintained viewer engagement throughout the series.</p>
+                        </div>
+                        
+                        <h3>Key Features</h3>
+                        <ul class="project-features">
+                            <li><i class="fas fa-check"></i> Color grading tailored to each location</li>
+                            <li><i class="fas fa-check"></i> Custom motion graphics and titles</li>
+                            <li><i class="fas fa-check"></i> Audio enhancement and background music</li>
+                            <li><i class="fas fa-check"></i> Seamless transitions between scenes</li>
+                            <li><i class="fas fa-check"></i> Optimized for YouTube platform</li>
+                            <li><i class="fas fa-check"></i> Consistent branding throughout series</li>
+                        </ul>
+                        
+                        <h3>Results</h3>
+                        <p>The series achieved a 40% increase in average view duration and a 25% growth in subscriber count during the first month of release. The client reported higher engagement rates and positive feedback on the production quality.</p>
+                        
+                        <a href="#contact" class="btn start-project-btn">Start Your Project</a>
+                    </div>
+                    
+                    <div class="project-gallery">
+                        <h3>Project Gallery</h3>
+                        <div class="project-images">
+                            <div class="project-image">
+                                <div style="width:100%; height:100%; background:linear-gradient(45deg, #4361ee, #3a0ca3);"></div>
+                            </div>
+                            <div class="project-image">
+                                <div style="width:100%; height:100%; background:linear-gradient(45deg, #7209b7, #3a0ca3);"></div>
+                            </div>
+                            <div class="project-image">
+                                <div style="width:100%; height:100%; background:linear-gradient(45deg, #f72585, #b5179e);"></div>
+                            </div>
+                            <div class="project-image">
+                                <div style="width:100%; height:100%; background:linear-gradient(45deg, #4cc9f0, #4361ee);"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---->
+    <div id="fitness-reels-detail" class="detail-page">
+        <div class="detail-header">
+            <div class="container">
+                <h1>Fitness Reels</h1>
+                <p>Professional video editing for a travel vlog channel</p>
+            </div>
+        </div>
+        
+        <div class="detail-content">
+            <div class="container">
+                <a href="#gallery" class="back-btn">
+                    <i class="fas fa-arrow-left"></i> Back to Gallery
+                </a>
+                
+                <div class="project-details">
+                    <div class="project-info">
+                        <h2>Project Overview</h2>
+                        <div class="project-description">
+                            <p>We collaborated with a popular travel vlogger to create a cohesive and engaging video series documenting their journey across Southeast Asia. The project involved editing 12 episodes, each with a unique visual style while maintaining brand consistency.</p>
+                            <p>Our approach focused on enhancing the storytelling through strategic pacing, color grading that captured the vibrancy of each location, and seamless transitions that maintained viewer engagement throughout the series.</p>
+                        </div>
+                        
+                        <h3>Key Features</h3>
+                        <ul class="project-features">
+                            <li><i class="fas fa-check"></i> Color grading tailored to each location</li>
+                            <li><i class="fas fa-check"></i> Custom motion graphics and titles</li>
+                            <li><i class="fas fa-check"></i> Audio enhancement and background music</li>
+                            <li><i class="fas fa-check"></i> Seamless transitions between scenes</li>
+                            <li><i class="fas fa-check"></i> Optimized for YouTube platform</li>
+                            <li><i class="fas fa-check"></i> Consistent branding throughout series</li>
+                        </ul>
+                        
+                        <h3>Results</h3>
+                        <p>The series achieved a 40% increase in average view duration and a 25% growth in subscriber count during the first month of release. The client reported higher engagement rates and positive feedback on the production quality.</p>
+                        
+                        <a href="#contact" class="btn start-project-btn">Start Your Project</a>
+                    </div>
+                    
+                    <div class="project-gallery">
+                        <h3>Project Gallery</h3>
+                        <div class="project-images">
+                            <div class="project-image">
+                                <div style="width:100%; height:100%; background:linear-gradient(45deg, #4361ee, #3a0ca3);"></div>
+                            </div>
+                            <div class="project-image">
+                                <div style="width:100%; height:100%; background:linear-gradient(45deg, #7209b7, #3a0ca3);"></div>
+                            </div>
+                            <div class="project-image">
+                                <div style="width:100%; height:100%; background:linear-gradient(45deg, #f72585, #b5179e);"></div>
+                            </div>
+                            <div class="project-image">
+                                <div style="width:100%; height:100%; background:linear-gradient(45deg, #4cc9f0, #4361ee);"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---->
+    <div id="product-reels-detail" class="detail-page">
+        <div class="detail-header">
+            <div class="container">
+                <h1>Product Showcase Reels</h1>
+                <p>Professional video editing for a travel vlog channel</p>
+            </div>
+        </div>
+        
+        <div class="detail-content">
+            <div class="container">
+                <a href="#gallery" class="back-btn">
+                    <i class="fas fa-arrow-left"></i> Back to Gallery
+                </a>
+                
+                <div class="project-details">
+                    <div class="project-info">
+                        <h2>Project Overview</h2>
+                        <div class="project-description">
+                            <p>We collaborated with a popular travel vlogger to create a cohesive and engaging video series documenting their journey across Southeast Asia. The project involved editing 12 episodes, each with a unique visual style while maintaining brand consistency.</p>
+                            <p>Our approach focused on enhancing the storytelling through strategic pacing, color grading that captured the vibrancy of each location, and seamless transitions that maintained viewer engagement throughout the series.</p>
+                        </div>
+                        
+                        <h3>Key Features</h3>
+                        <ul class="project-features">
+                            <li><i class="fas fa-check"></i> Color grading tailored to each location</li>
+                            <li><i class="fas fa-check"></i> Custom motion graphics and titles</li>
+                            <li><i class="fas fa-check"></i> Audio enhancement and background music</li>
+                            <li><i class="fas fa-check"></i> Seamless transitions between scenes</li>
+                            <li><i class="fas fa-check"></i> Optimized for YouTube platform</li>
+                            <li><i class="fas fa-check"></i> Consistent branding throughout series</li>
+                        </ul>
+                        
+                        <h3>Results</h3>
+                        <p>The series achieved a 40% increase in average view duration and a 25% growth in subscriber count during the first month of release. The client reported higher engagement rates and positive feedback on the production quality.</p>
+                        
+                        <a href="#contact" class="btn start-project-btn">Start Your Project</a>
+                    </div>
+                    
+                    <div class="project-gallery">
+                        <h3>Project Gallery</h3>
+                        <div class="project-images">
+                            <div class="project-image">
+                                <div style="width:100%; height:100%; background:linear-gradient(45deg, #4361ee, #3a0ca3);"></div>
+                            </div>
+                            <div class="project-image">
+                                <div style="width:100%; height:100%; background:linear-gradient(45deg, #7209b7, #3a0ca3);"></div>
+                            </div>
+                            <div class="project-image">
+                                <div style="width:100%; height:100%; background:linear-gradient(45deg, #f72585, #b5179e);"></div>
+                            </div>
+                            <div class="project-image">
+                                <div style="width:100%; height:100%; background:linear-gradient(45deg, #4cc9f0, #4361ee);"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Pixel Craft Lab</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Hi, I'm Ankit</h3>
+                    <p>Welcome to Pixel Craft Lab, your one-stop solution for all creative digital needs. With over 5 years of experience in the creative industry, I founded Pixel Craft Lab to help businesses and creators bring their visions to life.</p>
+                    <p>My mission is to deliver high-quality, visually stunning content that not only meets but exceeds your expectations. I believe in the power of visual storytelling and its ability to connect with audiences on a deeper level.</p>
+                    <p>Whether you're a content creator, small business, or established brand, I'm here to help you stand out in the digital landscape with professional video editing, graphic design, and visual content creation.</p>
+                    <a href="#contact" class="btn">Work With Me</a>
+                </div>
+                <div class="about-image">
+                    <!-- Placeholder for about image -->
+                    <div style="width:100%; height:400px; background:var(--gradient-primary); display:flex; align-items:center; justify-content:center; color:white; font-size:1.5rem;">
+                        Ankit - Founder
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+<section class="testimonials">
+    <div class="container">
+        <h2>What Our Clients Say</h2>
+        <p style="text-align: center; max-width: 700px; margin: 0 auto 40px;">Don't just take our word for it - hear from our satisfied clients</p>
+        
+        <div class="testimonial-slider">
+            <div class="testimonial-track">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-slide active">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p>"Ankit at Pixel Craft Lab transformed my YouTube channel with his incredible thumbnail designs. My click-through rate increased by 40% after using his services. The attention to detail and quick turnaround time was impressive!"</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="client-info">
+                            <div class="client-avatar">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Raj Sharma">
+                            </div>
+                            <div class="client-details">
+                                <h4>Raj Sharma</h4>
+                                <p>Content Creator - Tech Reviews</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-slide">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p>"The video editing service exceeded my expectations. Ankit took my raw footage and turned it into a cinematic masterpiece for our corporate training program. The motion graphics and seamless transitions made complex concepts easy to understand."</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="client-info">
+                            <div class="client-avatar">
+                                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Priya Patel">
+                            </div>
+                            <div class="client-details">
+                                <h4>Priya Patel</h4>
+                                <p>HR Manager - TechCorp Solutions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-slide">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p>"Working with Pixel Craft Lab for our brand identity was a game-changer. The logo design, color palette, and brand guidelines perfectly captured our vision. Professional, creative, and delivered on time!"</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                        <div class="client-info">
+                            <div class="client-avatar">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Amit Kumar">
+                            </div>
+                            <div class="client-details">
+                                <h4>Amit Kumar</h4>
+                                <p>Founder - GreenLeaf Organics</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="testimonial-slide">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p>"The Instagram Reels created by Pixel Craft Lab went viral and brought thousands of new followers to our fitness brand. Their understanding of trends and platform-specific formatting is exceptional. Highly recommended!"</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="client-info">
+                            <div class="client-avatar">
+                                <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Neha Gupta">
+                            </div>
+                            <div class="client-details">
+                                <h4>Neha Gupta</h4>
+                                <p>Fitness Influencer - FitWithNeha</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slider Navigation -->
+            <div class="slider-nav">
+                <button class="slider-prev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="slider-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                    <span class="dot" data-slide="3"></span>
+                </div>
+                <button class="slider-next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="trust-badges">
+            <div class="trust-item">
+                <div class="trust-icon">
+                    <i class="fas fa-smile"></i>
+                </div>
+                <div class="trust-text">
+                    <h3>50+</h3>
+                    <p>Happy Clients</p>
+                </div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">
+                    <i class="fas fa-project-diagram"></i>
+                </div>
+                <div class="trust-text">
+                    <h3>100+</h3>
+                    <p>Projects Completed</p>
+                </div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="trust-text">
+                    <h3>24/7</h3>
+                    <p>Support Available</p>
+                </div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">
+                    <i class="fas fa-award"></i>
+                </div>
+                <div class="trust-text">
+                    <h3>5 Star</h3>
+                    <p>Average Rating</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Let's Create Something Amazing Together</h3>
+                    <p>Have a project in mind? I'd love to hear about it. Send me a message and let's discuss how we can bring your vision to life.</p>
+                    <ul class="contact-details">
+                        <li><i class="fas fa-envelope"></i> hello@pixelcraftlab.com</li>
+                        <li><i class="fas fa-phone"></i> +91 98765 43210</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Based in New Delhi, India</li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-behance"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <!-- Formspree Contact Form -->
+                    <form action="https://formspree.io/f/your-form-id" method="POST" id="contact-form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" name="service" required>
+                                <option value="" disabled selected>Select Service</option>
+                                <option value="video-editing">Video Editing</option>
+                                <option value="graphic-design">Graphic Design</option>
+                                <option value="poster-making">Poster Making</option>
+                                <option value="thumbnail-making">Thumbnail Making</option>
+                                <option value="reels-making">Reels Making</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" name="budget" required>
+                                <option value="" disabled selected>Select Budget Range (INR)</option>
+                                <option value="1k-5k">₹1,000 - ₹5,000</option>
+                                <option value="5k-10k">₹5,000 - ₹10,000</option>
+                                <option value="10k-20k">₹10,000 - ₹20,000</option>
+                                <option value="20k-50k">₹20,000 - ₹50,000</option>
+                                <option value="50k+">₹50,000+</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" name="message" placeholder="Your Project Details" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Pixel Craft Lab</h3>
+                    <p>Professional creative studio specializing in video editing, graphic design, and visual content creation.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home" class="footer-nav-link">Home</a></li>
+                        <li><a href="#services" class="footer-nav-link">Services</a></li>
+                        <li><a href="#gallery" class="footer-nav-link">Gallery</a></li>
+                        <li><a href="#about" class="footer-nav-link">About</a></li>
+                        <li><a href="#contact" class="footer-nav-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#services">Video Editing</a></li>
+                        <li><a href="#services">Graphic Design</a></li>
+                        <li><a href="#services">Poster Making</a></li>
+                        <li><a href="#services">Thumbnail Making</a></li>
+                        <li><a href="#services">Reels Making</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> hello@pixelcraftlab.com</li>
+                        <li><i class="fas fa-phone"></i> +91 98765 43210</li>
+                        <li><i class="fas fa-map-marker-alt"></i> New Delhi, India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Pixel Craft Lab. All Rights Reserved. | Made with ❤️ By Pixel 2 Predict| Run by Ankit</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // State management for navigation
+        let currentState = 'home';
+        const stateHistory = ['home'];
+        
+        // Mobile Navigation Toggle
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+        
+        // Navigation functionality
+        const navLinks = document.querySelectorAll('.nav-link, .footer-nav-link');
+        const detailPages = document.querySelectorAll('.detail-page');
+        const mainSections = document.querySelectorAll('section');
+        
+        // Function to show main content and hide detail pages
+        function showMainContent(targetState) {
+            detailPages.forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            mainSections.forEach(section => {
+                section.style.display = 'block';
+            });
+            
+            // Close mobile menu if open
+            document.querySelector('.nav-links').classList.remove('active');
+            
+            // Update state
+            currentState = targetState || 'home';
+            if (!stateHistory.includes(currentState)) {
+                stateHistory.push(currentState);
+            }
+            
+            // Update browser history
+            if (targetState) {
+                window.history.pushState({state: currentState}, '', `#${targetState}`);
+            }
+        }
+        
+        // Navigation link click handlers
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                const targetId = link.getAttribute('href');
+                
+                if (targetId.startsWith('#')) {
+                    const targetState = targetId.substring(1);
+                    showMainContent(targetState);
+                    
+                    // Scroll to target section
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                
+                if (href === '#') return;
+                
+                const targetElement = document.querySelector(href);
+                if (targetElement) {
+                    e.preventDefault();
+                    const targetState = href.substring(1);
+                    showMainContent(targetState);
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Gallery Filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const filterValue = button.getAttribute('data-filter');
+                
+                galleryItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Testimonial Slider Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const slides = document.querySelectorAll('.testimonial-slide');
+        const dots = document.querySelectorAll('.dot');
+        const prevBtn = document.querySelector('.slider-prev');
+        const nextBtn = document.querySelector('.slider-next');
+        let currentSlide = 0;
+        let slideInterval;
+
+        // Function to show a specific slide
+        function showSlide(index) {
+            // Hide all slides
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            // Show the selected slide
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+            
+            currentSlide = index;
+        }
+
+        // Next slide function
+        function nextSlide() {
+            let next = currentSlide + 1;
+            if (next >= slides.length) {
+                next = 0;
+            }
+            showSlide(next);
+        }
+
+        // Previous slide function
+        function prevSlide() {
+            let prev = currentSlide - 1;
+            if (prev < 0) {
+                prev = slides.length - 1;
+            }
+            showSlide(prev);
+        }
+
+        // Event listeners for navigation
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        // Event listeners for dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(index);
+                resetInterval();
+            });
+        });
+
+        // Auto-slide functionality
+        function startInterval() {
+            slideInterval = setInterval(nextSlide, 5000);
+        }
+
+        function resetInterval() {
+            clearInterval(slideInterval);
+            startInterval();
+        }
+
+        // Start auto-sliding
+        startInterval();
+
+        // Pause on hover
+        const slider = document.querySelector('.testimonial-slider');
+        slider.addEventListener('mouseenter', () => {
+            clearInterval(slideInterval);
+        });
+
+        slider.addEventListener('mouseleave', () => {
+            startInterval();
+        });
+
+        // Touch swipe support for mobile
+        let startX = 0;
+        let endX = 0;
+
+        slider.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+
+        slider.addEventListener('touchend', (e) => {
+            endX = e.changedTouches[0].clientX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = startX - endX;
+
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    nextSlide();
+                } else {
+                    prevSlide();
+                }
+                resetInterval();
+            }
+        }
+    });
+
+        // Detail Page Navigation
+        const galleryItemsDetail = document.querySelectorAll('.gallery-item');
+        
+        galleryItemsDetail.forEach(item => {
+            item.addEventListener('click', () => {
+                const projectId = item.getAttribute('data-project');
+                
+                // Hide all detail pages
+                detailPages.forEach(page => {
+                    page.classList.remove('active');
+                });
+                
+                // Hide main content sections
+                mainSections.forEach(section => {
+                    section.style.display = 'none';
+                });
+                
+                // Show the selected detail page
+                const detailPage = document.getElementById(`${projectId}-detail`);
+                if (detailPage) {
+                    detailPage.classList.add('active');
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update state
+                    currentState = `project-${projectId}`;
+                    stateHistory.push(currentState);
+                    window.history.pushState({state: currentState}, '', `#${projectId}`);
+                }
+                
+                // Close mobile menu if open
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+
+        // Back to Gallery functionality
+        const backButtons = document.querySelectorAll('.back-btn');
+        
+        backButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                showMainContent('gallery');
+                
+                // Scroll to gallery section
+                window.scrollTo({
+                    top: document.getElementById('gallery').offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Start Project button functionality
+        const startProjectButtons = document.querySelectorAll('.start-project-btn');
+        
+        startProjectButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                showMainContent('contact');
+                
+                // Scroll to contact section
+                window.scrollTo({
+                    top: document.getElementById('contact').offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Browser back button functionality
+        window.addEventListener('popstate', function(event) {
+            if (stateHistory.length > 1) {
+                stateHistory.pop();
+                const previousState = stateHistory[stateHistory.length - 1];
+                
+                if (previousState.startsWith('project-')) {
+                    const projectId = previousState.replace('project-', '');
+                    const detailPage = document.getElementById(`${projectId}-detail`);
+                    
+                    if (detailPage) {
+                        // Show detail page
+                        detailPages.forEach(page => {
+                            page.classList.remove('active');
+                        });
+                        
+                        mainSections.forEach(section => {
+                            section.style.display = 'none';
+                        });
+                        
+                        detailPage.classList.add('active');
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    }
+                } else {
+                    showMainContent(previousState);
+                    
+                    // Scroll to section if needed
+                    const targetElement = document.getElementById(previousState);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+                
+                currentState = previousState;
+            }
+        });
+        
+        // Initialize state
+        window.history.replaceState({state: 'home'}, '', '#home');
+    </script>
+</body>
+</html>
